@@ -10,7 +10,7 @@ test('Button has correct initial color.', () => {
 
   fireEvent.click(colorButton);
   expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
-  expect(colorButton.textContent).toBe('Change to red');
+  expect(colorButton).toHaveTextContent('Change to red');
 });
 
 test('Initial conditions.', () => {
@@ -32,7 +32,7 @@ test('Checkboxes disbales button on firts click and diables on second click', ()
   expect(colorButton).toBeDisabled();
 
   fireEvent.click(checkbox);
-  expect(colorButton).not.toBeDisabled();
+  expect(colorButton).toBeEnabled();
 });
 
 test('Disabled button has gray background and reverts to red.', () => {
